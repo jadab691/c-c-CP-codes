@@ -8,6 +8,7 @@ using namespace std;
 
 #define mx 110 
 vector < int > graph [mx];
+bool mark[mx] ;
 bool vis[mx] ;
 int dis[mx] ;
 
@@ -60,6 +61,7 @@ int main()
     for(int i=0 ; i < numOfSources ; i++)
     {
         int source ; cin >> source ;
+        mark[source] = 1 ;
         sources.push_back(source) ;
     }
     
@@ -71,6 +73,7 @@ int main()
     // cout << "From node " << source << endl;
     for(int i=1 ; i <= node ; i++)
     {
+        if(mark [i] == true) continue ;
         cout << "Distance of " << i << " is : " << dis[i] << endl;
     }
 
